@@ -1,4 +1,4 @@
-# # 📘 Automação de Testes de API – Books
+#  Automação de Testes de API – Books
 
 Este projeto foi desenvolvido como parte de um **desafio técnico de automação de testes de API**, com o objetivo de validar as operações de CRUD de uma API REST pública.
 
@@ -25,7 +25,7 @@ Garantir que o endpoint `/api/v1/Books` esteja funcionando corretamente, validan
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 ### Java 21
 Java 21 é a versão LTS mais recente da linguagem, trazendo avanços significativos em performance, segurança e simplicidade.
