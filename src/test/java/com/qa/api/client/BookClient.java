@@ -22,5 +22,13 @@ import static io.restassured.RestAssured.given;
                     .when()
                     .post(BOOKS_ENDPOINT);
         }
+        public static Response updateBook(int id, Book book) {
+            return given()
+                    .contentType("application/json")
+                    .body(book)
+                    .when()
+                    .put(BOOKS_ENDPOINT + "/" + id);
+        }
+
     }
 
