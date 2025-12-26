@@ -23,4 +23,5 @@ public class Book {
     private int pageCount;
     private String excerpt;
     private String publishDate;
+
 }
