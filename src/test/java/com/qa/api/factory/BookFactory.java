@@ -7,17 +7,15 @@ import java.time.LocalDateTime;
 
 /*
  Centraliza a criação de dados
-
 evita dados criticos
-
 Facilita a manutenção
-Utilização de boas praticas 
+Utilização de boas praticas
 */
 
 public class BookFactory {
     private static final Faker faker= new Faker();
 
-    public static Book criacaoValidacaoDoBook(){
+    public static Book createValidBook(){
         Book book =new Book();
         book.setId(faker.number().numberBetween(1,9999));
         book.setTitle(faker.book().title());
@@ -28,4 +26,5 @@ public class BookFactory {
         return book;
 
     }
+
 }
