@@ -14,7 +14,7 @@ import static io.restassured.RestAssured.given;
 
         private static final String BOOKS_ENDPOINT = "/Books";
 
-        // CREATE
+        // Post
         public static Response createBook(Book book) {
             return given()
                     .contentType(ContentType.JSON)
