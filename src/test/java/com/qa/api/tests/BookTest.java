@@ -1,5 +1,4 @@
 package com.qa.api.tests;
-
 import com.qa.api.client.BookClient;
 import com.qa.api.factory.BookFactory;
 import com.qa.api.model.Book;
@@ -11,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
+
 public class BookTest {
     @BeforeAll
     static void setup() {
@@ -19,7 +19,7 @@ public class BookTest {
 
     //post
     @Test
-    public void CT01_shouldCreateBookSuccessfully() {
+    public void shouldCreateBookSuccessfully() {
         // Arrange
         Book book = BookFactory.createValidBook();
 
@@ -47,7 +47,31 @@ public class BookTest {
                 .then()
                 .statusCode(200); //  valida comportamento
     }
+
+    @Test
+
+    void shouldGetAllBooksSuccessfully() {
+
+        BookClient.getAllBooks()
+                .then()
+                .statusCode(200);
     }
+
+    @Test
+    void shouldDeleteBookSuccessfully() {
+
+        Book book = BookFactory.createValidBook();
+
+        BookClient.createBook(book)
+                .then()
+                .statusCode(200);
+
+        BookClient.deleteBook(book.getId())
+                .then()
+                .statusCode(200);
+    }
+
+}
 
 
 

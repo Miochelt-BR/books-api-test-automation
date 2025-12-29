@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe660cda-3e6f-4c8f-85fc-7ee172f876c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/api/client/BookClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/api/client/BookClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/api/tests/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/api/tests/BookTest.java" afterDir="false" />
     </list>
@@ -35,6 +37,9 @@
   "keyToString": {
     "JUnit.BookTest.CT01_deveCriarLivrosComSucesso.executor": "Run",
     "JUnit.BookTest.executor": "Run",
+    "JUnit.BookTest.shouldCreateBookSuccessfully.executor": "Run",
+    "JUnit.BookTest.shouldDeleteBookSuccessfully.executor": "Run",
+    "JUnit.BookTest.shouldGetAllBooksSuccessfully.executor": "Run",
     "JUnit.BookTest.shouldUpdateBookSuccessfully.executor": "Run",
     "Maven.books-api-test-automation [clean].executor": "Run",
     "Maven.books-api-test-automation [install].executor": "Run",
@@ -50,22 +55,7 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BookTest.shouldUpdateBookSuccessfully">
-    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="books-api-test-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qa.api.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BookTest.shouldGetAllBooksSuccessfully">
     <configuration name="BookTest.CT01_deveCriarLivrosComSucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="books-api-test-automation" />
       <extension name="coverage">
@@ -77,6 +67,54 @@
       <option name="PACKAGE_NAME" value="com.qa.api.tests" />
       <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
       <option name="METHOD_NAME" value="CT01_deveCriarLivrosComSucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.shouldCreateBookSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="books-api-test-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qa.api.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
+      <option name="METHOD_NAME" value="shouldCreateBookSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.shouldDeleteBookSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="books-api-test-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qa.api.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
+      <option name="METHOD_NAME" value="shouldDeleteBookSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.shouldGetAllBooksSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="books-api-test-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qa.api.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
+      <option name="METHOD_NAME" value="shouldGetAllBooksSuccessfully" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -100,9 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookTest.shouldGetAllBooksSuccessfully" />
         <item itemvalue="JUnit.BookTest.shouldUpdateBookSuccessfully" />
+        <item itemvalue="JUnit.BookTest.shouldCreateBookSuccessfully" />
+        <item itemvalue="JUnit.BookTest.shouldDeleteBookSuccessfully" />
         <item itemvalue="JUnit.BookTest.CT01_deveCriarLivrosComSucesso" />
-        <item itemvalue="JUnit.BookTest" />
       </list>
     </recent_temporary>
   </component>
