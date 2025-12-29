@@ -36,11 +36,18 @@ import static io.restassured.RestAssured.given;
                     .get(BOOKS_ENDPOINT);
         }
 
+        public static Response getBookById(int id) {
+            return given()
+                    .when()
+                    .get(BOOKS_ENDPOINT + "/" + id);
+        }
+
         public static Response deleteBook(int id) {
             return given()
                     .when()
                     .delete(BOOKS_ENDPOINT + "/" + id);
         }
+
 
 
     }

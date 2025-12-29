@@ -58,6 +58,14 @@ public class BookTest {
     }
 
     @Test
+    void shouldGetBookByIdSuccessfully() {
+
+        BookClient.getBookById(1)
+                .then()
+                .statusCode(200);
+    }
+
+    @Test
     void shouldDeleteBookSuccessfully() {
 
         Book book = BookFactory.createValidBook();
@@ -70,6 +78,25 @@ public class BookTest {
                 .then()
                 .statusCode(200);
     }
+    // POST DADOS QUE NÃO EXISTEM
+    @Test
+    void shouldReturn400WhenCreatingInvalidBook() {
+
+        Book invalidBook = new Book();
+
+        BookClient.createBook(invalidBook)
+                .then()
+                .statusCode(400);
+    }
+    //GET COM DADOS NEGATIVOS
+    @Test
+    void shouldNotGetBookWithNegativeId() {
+
+        BookClient.getBookById(-1)
+                .then()
+                .statusCode(404);
+    }
+
 
 }
 
