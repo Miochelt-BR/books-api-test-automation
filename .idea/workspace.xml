@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe660cda-3e6f-4c8f-85fc-7ee172f876c5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/api/client/BookClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/api/client/BookClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/api/tests/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/api/tests/BookTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +40,10 @@
     "JUnit.BookTest.shouldDeleteBookSuccessfully.executor": "Run",
     "JUnit.BookTest.shouldGetAllBooksSuccessfully.executor": "Run",
     "JUnit.BookTest.shouldGetBookByIdSuccessfully.executor": "Run",
+    "JUnit.BookTest.shouldNotCreateBookWithoutTitle.executor": "Run",
     "JUnit.BookTest.shouldNotGetBookWithNegativeId.executor": "Run",
     "JUnit.BookTest.shouldReturn400WhenCreatingInvalidBook.executor": "Run",
+    "JUnit.BookTest.shouldReturn404WhenUpdatingNonExistingBook.executor": "Run",
     "JUnit.BookTest.shouldUpdateBookSuccessfully.executor": "Run",
     "Maven.books-api-test-automation [clean].executor": "Run",
     "Maven.books-api-test-automation [install].executor": "Run",
@@ -57,38 +59,7 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.BookTest.shouldNotGetBookWithNegativeId">
-    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="books-api-test-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qa.api.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BookTest.shouldDeleteBookSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="books-api-test-automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.qa.api.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
-      <option name="METHOD_NAME" value="shouldDeleteBookSuccessfully" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BookTest.shouldReturn404WhenUpdatingNonExistingBook">
     <configuration name="BookTest.shouldGetBookByIdSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="books-api-test-automation" />
       <extension name="coverage">
@@ -100,6 +71,22 @@
       <option name="PACKAGE_NAME" value="com.qa.api.tests" />
       <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
       <option name="METHOD_NAME" value="shouldGetBookByIdSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BookTest.shouldNotCreateBookWithoutTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="books-api-test-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qa.api.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
+      <option name="METHOD_NAME" value="shouldNotCreateBookWithoutTitle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,13 +124,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BookTest.shouldReturn404WhenUpdatingNonExistingBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="books-api-test-automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qa.api.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qa.api.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.qa.api.tests.BookTest" />
+      <option name="METHOD_NAME" value="shouldReturn404WhenUpdatingNonExistingBook" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BookTest.shouldReturn404WhenUpdatingNonExistingBook" />
+        <item itemvalue="JUnit.BookTest.shouldNotCreateBookWithoutTitle" />
         <item itemvalue="JUnit.BookTest.shouldNotGetBookWithNegativeId" />
         <item itemvalue="JUnit.BookTest.shouldReturn400WhenCreatingInvalidBook" />
         <item itemvalue="JUnit.BookTest.shouldGetBookByIdSuccessfully" />
-        <item itemvalue="JUnit.BookTest" />
-        <item itemvalue="JUnit.BookTest.shouldDeleteBookSuccessfully" />
       </list>
     </recent_temporary>
   </component>
@@ -167,20 +170,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/qa/api/tests/BookTest.java</url>
-          <line>82</line>
-          <properties class="com.qa.api.tests.BookTest" method="shouldReturn400WhenCreatingInvalidBook">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

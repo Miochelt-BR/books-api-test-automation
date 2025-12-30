@@ -194,6 +194,90 @@ Esse comportamento é **esperado em APIs fake ou mockadas** e **não caracteriza
 
  **Validação de persistência não se aplica** a esse tipo de API.
 
+
+## Comportamento de PUT e DELETE com Payload `null` ou Recurso Inexistente
+
+Durante a execução dos cenários negativos, foi observado que os endpoints de **PUT** e **DELETE** apresentam comportamentos específicos devido à natureza **fake/mockada** da API.
+
+---
+
+### PUT (Update) com dados inválidos ou recurso inexistente — API Fake
+
+- O endpoint aceita payloads incompletos ou inválidos (inclusive `null`)
+- Retorna **status 200 OK**
+- Não realiza validações de regra de negócio
+- Não persiste alterações
+
+Esse comportamento é esperado em APIs Fake, cujo objetivo é **simular a existência do endpoint**, e não validar regras reais de domínio.
+
+ **Abordagem de teste adotada:**
+- O cenário é classificado como **negativo do ponto de vista de qualidade**
+- A validação foca na **robustez do endpoint** e na **aceitação do request**
+- Não é realizada validação de persistência ou consistência de dados
+
+---
+
+### DELETE de recurso inexistente ou inválido — API Fake
+
+- O endpoint aceita a requisição mesmo quando o recurso não existe
+- Retorna **status 200 OK**
+- Não há validação real de existência do registro
+- Não há erro ou exceção retornada
+
+ **Abordagem de teste adotada:**
+- O teste valida apenas o **comportamento do endpoint**
+- O retorno `200 OK` é considerado aceitável dentro do contexto de uma API Fake
+- O cenário é documentado como **negativo contextual**, e não como falha da automação
+
+---
+
+## Como deveria ser o comportamento em uma API real
+
+Em uma **API real**, com persistência de dados e regras de negócio implementadas, os comportamentos esperados seriam diferentes.
+
+### PUT (Update) — API Real
+
+- `400 Bad Request`  
+  Quando o payload é inválido, incompleto ou contém valores `null` não permitidos.
+
+- `404 Not Found`  
+  Quando o recurso informado para atualização não existe.
+
+- `200 OK` ou `204 No Content`  
+  Apenas quando a atualização ocorre com sucesso e os dados são persistidos corretamente.
+
+---
+
+### DELETE — API Real
+
+- `404 Not Found`  
+  Quando o recurso informado para exclusão não existe.
+
+- `204 No Content`  
+  Quando o recurso é removido com sucesso.
+
+- `400 Bad Request`  
+  Quando o identificador informado é inválido.
+
+---
+
+### Consideração Final sobre APIs Fake
+
+Como se trata de uma **API Fake**, essas validações **não estão implementadas**.  
+Por esse motivo, os testes deste projeto são ajustados para:
+
+- Evitar falsos negativos
+- Validar corretamente o **comportamento esperado da API**
+- Demonstrar **entendimento de contexto**, e não apenas validação técnica
+
+Esse cuidado reforça um ponto essencial em qualidade de software:
+
+> **Testar não é apenas validar respostas, mas compreender o propósito do sistema testado.**
+
+
+
+        
+
 ---
 
 ## ✅ Considerações Finais

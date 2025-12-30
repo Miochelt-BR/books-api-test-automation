@@ -78,15 +78,46 @@ public class BookTest {
                 .then()
                 .statusCode(200);
     }
-    // POST DADOS QUE NÃO EXISTEM
+
+
+    /**
+     * Cenário negativo para validação do endpoint POST.
+     * <p>
+     * Verifica o comportamento da API ao receber um payload inválido.
+     * Em APIs Fake, a ausência de validações pode impactar o status retornado.
+     * </p>
+     */
     @Test
-    void shouldReturn400WhenCreatingInvalidBook() {
+        void shouldReturn400WhenCreatingInvalidBook() {
 
-        Book invalidBook = new Book();
+            Book invalidBook = new Book();
 
-        BookClient.createBook(invalidBook)
+            BookClient.createBook(invalidBook)
+                    .then()
+                    .statusCode(400);
+        }
+    /**
+     * Cenário classificado como negativo do ponto de vista de qualidade.
+     * <p>
+     * O objetivo deste teste não é validar regras de negócio,
+     * mas sim o comportamento do endpoint ao receber um payload inválido.
+     * </p>
+     * <p>
+     * Como se trata de uma API Fake, não existe persistência de dados
+     * nem validações de domínio, fazendo com que o endpoint aceite
+     * informações inválidas sem retornar erro.
+     * </p>
+     */
+
+    @Test
+    void shouldNotCreateBookWithoutTitle() {
+
+        Book book = BookFactory.createValidBook();
+        book.setTitle(null);
+
+        BookClient.createBook(book)
                 .then()
-                .statusCode(400);
+                .statusCode(200);
     }
     //GET COM DADOS NEGATIVOS
     @Test
@@ -96,6 +127,49 @@ public class BookTest {
                 .then()
                 .statusCode(404);
     }
+    /**
+     * Cenário negativo para o endpoint PUT.
+     * <p>
+     * Comportamento esperado em uma API real:
+     * tentativa de atualização de um recurso inexistente deveria retornar erro (ex: 404).
+     * </p>
+     * <p>
+     * Comportamento observado nesta API Fake:
+     * o endpoint aceita o request e retorna 200, sem validar regra de negócio
+     * ou existência real do recurso.
+     * </p>
+     */
+    @Test
+    void shouldReturn200WhenUpdatingNonExistingBookInFakeApi() {
+
+        Book book = BookFactory.createValidBook();
+
+        BookClient.updateBook(9999999, book)
+                .then()
+                .statusCode(200);
+    }
+    /**
+     * Cenário negativo para o endpoint DELETE.
+     * <p>
+     * Comportamento esperado em uma API real:
+     * tentativa de exclusão de um recurso inexistente deveria retornar erro (ex: 404).
+     * </p>
+     * <p>
+     * Comportamento observado nesta API Fake:
+     * o endpoint aceita a requisição e retorna 200,
+     * sem validar a existência real do recurso.
+     * </p>
+     */
+    @Test
+    void shouldReturn200WhenDeletingNonExistingBookInFakeApi() {
+
+        BookClient.deleteBook(9999999)
+                .then()
+                .statusCode(200);
+    }
+
+
+
 
 
 }
